@@ -6,6 +6,8 @@
 
 package carrano;
 
+import java.util.Objects;
+
 /**
  * This class parses a sentence in a standard notation of propositional
  * logic and builds a truth table for that sentence.  For this parser,
@@ -96,6 +98,29 @@ public class LogicParser {
         
     }
     
+    public boolean equals(LogicParser other) {
+        if ( variableCount != other.getVariableCount() )
+            return false;
+        
+        Character[] propsA = this.getProps();
+        Character[] propsB = other.getProps();
+        
+        for ( int i = 0; i < propsA.length; i++ ) {
+            if ( !Objects.equals(propsA[i], propsB[i]) )
+                return false;
+        }
+        
+        
+        boolean[][] vals = this.generateBooleanArrays();
+        boolean a;
+        boolean b;
+        for ( int i = 0; i < variableCount; i++ ) {
+            if ( this.evaluateFromBooleans(vals[i]) != other.evaluateFromBooleans(vals[i]) ) 
+                return false;
+        }
+        return true;
+    }
+    
     /**
      * This method converts an array of boolean values into a String of "T"s and "F"s
      * This is used to generate the Truth Table
@@ -147,7 +172,7 @@ public class LogicParser {
      * 0's are converted into True and 1s into False (this helps with the formatting of the truth table
      * @return 
      */
-    private boolean[][] generateBooleanArrays() {
+    protected boolean[][] generateBooleanArrays() {
         String[] input = generateStringArrays();
         int num = (int) Math.pow(2, variableCount);
         boolean[][] result = new boolean[num][variableCount];
