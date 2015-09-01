@@ -27,8 +27,10 @@ public class Carrano {
         try {
             test = new LogicParser("!(!(!p^q))");
             one = test.generateTruthTable();
-            test = new LogicParser("!p^q");
-            two = test.generateTruthTable();
+            LogicParser test2 = new LogicParser("!p^q");
+            two = test2.generateTruthTable();
+            
+            System.out.println(test.equals(test2));
         }
         catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
