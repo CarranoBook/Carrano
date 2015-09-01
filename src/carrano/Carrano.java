@@ -7,6 +7,7 @@
 package carrano;
 //A558F2A6C98207E93B779FB4070F1A4B
 import java.util.Date;
+import java.util.Scanner;
 
 /**
  *
@@ -18,17 +19,23 @@ public class Carrano {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        String one, two;
+        one ="";
+        two ="";
+        
         LogicParser test;
-        boolean t = true;
-        boolean f = false;
-        String s = "a";
         try {
-        test = new LogicParser(s);
-            System.out.println(test.generateTruthTable());
+            test = new LogicParser("!(!(!p^q))");
+            one = test.generateTruthTable();
+            test = new LogicParser("!p^q");
+            two = test.generateTruthTable();
         }
         catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
+        
+        System.out.println(one);
+        System.out.println(two);
     } //end main
     
    
