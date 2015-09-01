@@ -11,8 +11,7 @@ import java.util.Objects;
 /**
  * This class parses a sentence in a standard notation of propositional
  * logic and builds a truth table for that sentence.  For this parser,
- * negation has operator precedence over conjunction and disjunction, and
- * conjunction and disjunction are evaluated right to left.  Recommend copious
+ * negation has operator precedence over conjunction and disjunction.  Recommend copious
  * use of parenthesis
  * @author NBleier
  */
