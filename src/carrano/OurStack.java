@@ -38,10 +38,9 @@ public class OurStack<T> implements StackInterface<T> {
     public T pop() {
         if ( this.isEmpty() )
             return null;
+        
         numberOfEntries--;
-        T temp = stack[numberOfEntries];
-        stack[numberOfEntries] = null;
-        return temp;
+        return stack[numberOfEntries];
     }
 
     @Override
@@ -68,5 +67,25 @@ public class OurStack<T> implements StackInterface<T> {
     protected int getSize() {
         return this.numberOfEntries;
     }
+    
        
+}
+
+class StackApp {
+    public static void main(String[] args) {
+        OurStack<String> sStack = new OurStack<>();
+        String[] rainbow = {"red", "orange", "yellow", "green", "blue", "indigo", "violet"};
+        for ( int i = 0; i < rainbow.length; i++ ) 
+            sStack.push(rainbow[i]);
+        
+        System.out.println("There are " + sStack.getSize() + " entries in the stack.\n"
+                    + "Now popping from the stack:");
+        
+        for ( int i = 0; i < rainbow.length; i++ )
+            System.out.println(sStack.pop());
+        
+        System.out.println("There are " + sStack.getSize() + " entries in the stack.");
+        System.out.println("Stack is empty? " + sStack.isEmpty());
+        
+    }
 }
