@@ -8,7 +8,7 @@ package carrano;
 
 /**
  *
- * @author FukYu
+ * @author NBleier
  */
 public interface StackInterface<T> {
     /**
