@@ -25,7 +25,7 @@ public class Carrano {
         
         LogicParser test;
         try {
-            test = new LogicParser("!(!(!p^q))");
+            test = new LogicParser("pvr^q");
             one = test.generateTruthTable();
             LogicParser test2 = new LogicParser("!p^q");
             two = test2.generateTruthTable();

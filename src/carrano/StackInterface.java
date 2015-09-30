@@ -36,8 +36,7 @@ public interface StackInterface<T> {
     public boolean isEmpty();
     
     /**
-     * Removes all entries from the stack
-     * @return 
+     * Removes all entries from the stack 
      */
     public void clear();
     
