@@ -66,9 +66,7 @@ public class OurStack<T> implements StackInterface<T> {
     
     protected int getSize() {
         return this.numberOfEntries;
-    }
-    
-       
+    } 
 }
 
 class StackApp {
