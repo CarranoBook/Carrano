@@ -73,17 +73,18 @@ class StackApp {
     public static void main(String[] args) {
         OurStack<String> sStack = new OurStack<>();
         String[] rainbow = {"red", "orange", "yellow", "green", "blue", "indigo", "violet"};
-        for ( int i = 0; i < rainbow.length; i++ ) 
-            sStack.push(rainbow[i]);
+        for (String color : rainbow) {
+            sStack.push(color);
+        }
         
         System.out.println("There are " + sStack.getSize() + " entries in the stack.\n"
                     + "Now popping from the stack:");
         
-        for ( int i = 0; i < rainbow.length; i++ )
+        for (String color : rainbow) {
             System.out.println(sStack.pop());
+        }
         
         System.out.println("There are " + sStack.getSize() + " entries in the stack.");
         System.out.println("Stack is empty? " + sStack.isEmpty());
-        
     }
 }
