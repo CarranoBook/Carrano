@@ -166,5 +166,22 @@ public class BoundedArrayQueue<E> implements Queue<E> {
         count = 0;
         
     }
+    
+    public static void main(String[] args) {
+        BoundedArrayQueue<Integer> test = new BoundedArrayQueue<>(5);
+        test.add(10);
+        test.add(20);
+        test.add(30);
+        test.add(40);
+        test.remove();
+        test.remove();
+        test.remove();
+        test.add(50);
+        test.add(60);
+        test.add(70);
+        test.add(80);
+        while (!test.isEmpty())
+            System.out.println(test.remove());
+    }
 
 }
