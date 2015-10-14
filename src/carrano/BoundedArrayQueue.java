@@ -41,9 +41,12 @@ public class BoundedArrayQueue<E> implements Queue<E> {
             throw new IndexOutOfBoundsException("Queue is already full.  See notes for offer method.");
         
         q[rear] = e;
-        rear = (rear + 1) % size;
-        count++;
+        if ( rear == size - 1 )
+            rear = 0;
+        else
+            rear++;
         
+        count++;
         return true;
     }
 
@@ -62,7 +65,11 @@ public class BoundedArrayQueue<E> implements Queue<E> {
         E temp = q[front];
         q[front] = null;
         
-        front = (front + 1) % size;
+        if ( front == size -1 )
+            front = 0;
+        else
+            front++;
+
         count--;
         
         return temp;
