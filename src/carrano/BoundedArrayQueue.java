@@ -49,6 +49,14 @@ public class BoundedArrayQueue<E> implements Queue<E> {
         count++;
         return true;
     }
+    
+    public boolean isFull() {
+        return count == size;
+    }
+    
+    public boolean insert(E e) {
+        return this.add(e);
+    }
 
     @Override
     public boolean offer(E e) {
@@ -165,6 +173,22 @@ public class BoundedArrayQueue<E> implements Queue<E> {
         rear = 0;
         count = 0;
         
+    }
+    
+    public String toString() {
+        String out = "Contents of Queue:\n";
+        int index = this.front;
+        int count = 1;
+        boolean proc = true;
+        while (proc) {
+            out += count++ + ". " + this.q[index] + "\n";
+            
+            index = (index + 1) % this.size;
+            if ( index == this.rear )
+                proc = false;
+        }
+        
+        return out;
     }
     
     public static void main(String[] args) {
