@@ -3,3 +3,60 @@ Lower Bound - Best Case - Big Omega
 Upper and Lower - Big Theta
 
 Stack - Abstract Data Structure
+
+Sorting:
+
+1.  Bubble Sort
+    Repeatedly compares adjacent elements of array.  Sorts adjacent elements.
+After each pass, the "rightmost" element in the array is sorted.  Eg:
+
+1 4 3 5 6 2 - Initial
+1 3 4 5 2 6 - After First Pass
+1 3 4 2 5 6 - After Second Pass
+1 3 2 4 5 6 - After Third Pass
+1 2 3 4 5 6 - After Fourth Pass
+1 2 3 4 5 6 - After Fifth Pass
+fin
+
+Time Complexity:
+Best Case: O(n^2)
+Worst Case: O(n^2)
+Average Case: O(n^2)
+
+Space Complexity:
+O(1) Auxiliary
+
+
+2.  Selection Sort
+    Selects the smallest element and moves it to the beginning of the array.
+
+8 3 2 5 1 4 - Initial
+1 3 2 5 8 4 - After First Pass
+1 2 3 5 8 4 - After Second Pass
+1 2 3 5 8 4 - After Third Pass
+1 2 3 4 8 5 - After Fourth Pass
+1 2 3 4 5 8 - After Fifth Pass
+fin
+
+Time Complexity:
+Best Case: O(n^2)
+Worst Case: O(n^2)
+Average Case: O(n^2)
+O(n^2) comparisons, but only O(n) swaps
+
+Space Complexity:
+O(1) Auxiliary
+
+3.  Insertion Sort
+    Iterates through an array, sorting all elements to the left of the index.
+
+8 3 2 5 1 4 - Initial
+3 8 2 5 1 4 - At index 0
+2 3 8 5 1 4 - At Index 1
+2 3 8 5 1 4 - at Index 2
+2 3 5 8 1 4 - at Index 3
+1 2 3 5 8 4 - at Index 4
+1 2 3 4 5 8 - at Index 5
+fin
+
+4.  Shell Sort
