@@ -41,7 +41,6 @@ public class Factorial {
     }
     
     public static void main(String[] args) {
-        System.out.println(new Factorial(12));
+        System.out.println(new Factorial(6));
     }
-    
 }
