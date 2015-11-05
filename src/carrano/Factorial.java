@@ -48,6 +48,7 @@ public class Factorial {
         return val;
     }
     
+    @Override
     public String toString() {
         return Long.toString(val);
     }
