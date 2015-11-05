@@ -5,6 +5,8 @@
  */
 package carrano;
 
+import java.util.Scanner;
+
 /**
  *
  * @author nbleier
@@ -25,8 +27,8 @@ public class Factorial {
     private long check(long n) {
         if ( n == 1 || n == 0 )
             return 1;
-        else if ( n < 0 )
-            throw new IllegalArgumentException("Must pass non-negative longeger");
+        else if ( n < 0 || n > 20)
+            throw new IllegalArgumentException("Must pass non-negative integer <= 20");
         
         return fac(n);
     } //end check
@@ -51,6 +53,18 @@ public class Factorial {
     }
     
     public static void main(String[] args) {
-        System.out.println(new Factorial(6));
+        Scanner scan = new Scanner(System.in);
+        long n;
+        while (true) {
+            n = -1;
+            try {
+                System.out.println("Please enter an integer between 0 and 20: ");
+                n = scan.nextLong();
+                System.out.println(n + "! is " + new Factorial(n));
+            }
+            catch (IllegalArgumentException e) {
+                System.out.println(e);
+            } 
+        }
     }
 }
