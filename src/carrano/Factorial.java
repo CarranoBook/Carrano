@@ -66,12 +66,10 @@ public class Factorial {
                 }
                 else {
                     scan.next();
-                    continue;
                 }
             }
             catch (IllegalArgumentException e) {
                 System.out.println(e);
-                continue;
             }
         }
     }
