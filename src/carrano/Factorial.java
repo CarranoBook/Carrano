@@ -14,8 +14,14 @@ public class Factorial {
     
     public Factorial(long n) {
         val = check(n);
-    }
+    } //end constructor
 
+    /**
+     * This method checks to see that the factorial operation is defined for the value passed.
+     * Although this isn't particularlly important for this particular algorithm, it can be very useful for
+     * certain other recursive algorithms
+     * @param n - value to be factorialed
+     */
     private long check(long n) {
         if ( n == 1 || n == 0 )
             return 1;
@@ -23,8 +29,12 @@ public class Factorial {
             throw new IllegalArgumentException("Must pass non-negative longeger");
         
         return fac(n);
-    }
-
+    } //end check
+    
+    /**
+     * Calculates the value of n!
+     * @param n - value to be factorialed
+     */
     private long fac(long n) {
         if ( n == 2 )
             return 2;
