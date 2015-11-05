@@ -56,7 +56,6 @@ public class Factorial {
         Scanner scan = new Scanner(System.in);
         long n;
         while (true) {
-            n = -1;
             try {
                 System.out.println("Please enter an integer between 0 and 20: ");
                 n = scan.nextLong();
