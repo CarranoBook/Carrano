@@ -5,6 +5,8 @@
  */
 package carrano;
 
+import java.util.InputMismatchException;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 /**
@@ -58,12 +60,19 @@ public class Factorial {
         while (true) {
             try {
                 System.out.println("Please enter an integer between 0 and 20: ");
-                n = scan.nextLong();
-                System.out.println(n + "! is " + new Factorial(n));
+                if (scan.hasNextLong()) {
+                    n = scan.nextLong();
+                    System.out.println(n + "! is " + new Factorial(n));
+                }
+                else {
+                    scan.next();
+                    continue;
+                }
             }
             catch (IllegalArgumentException e) {
                 System.out.println(e);
-            } 
+                continue;
+            }
         }
     }
 }
