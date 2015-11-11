@@ -124,3 +124,33 @@ The steps are:
 
 The base case of the recursion is arrays of size zero or one, which never need to be sorted. A quicksort that sorts elements lo through hi (inclusive) of an array A can be expressed as function quicksort(A, lo, hi). Sorting the entire array is accomplished by calling quicksort(A, 1, length(A)).
 
+Lists
+
+    Array -
+        Insertion Operation complexity is very high.
+        Resize Operation complexity is very high.
+        Uses fixed size of memory
+        Can use binary (logarithmic) search
+
+    Linked Node List -
+        Insertion Operation in O(n) time
+        Resize Operation not required 
+        Uses only required memory
+        Can only use linear search
+
+Trees
+
+    Binary Tree
+        Each node has at most two descendents
+        Full Tree:
+            Each tree in a level have either 2 descendents or zero descendents
+            Has 2^n - 1 nodes where n is the number of levels
+        Complete Tree
+            Each Tree either has 2 descendents or no descendents
+
+    Traversal of a Binary Tree
+        Preorder Traversal
+            Start at root.  Goto left subtrees first.
+        Inorder Traversal
+        Postorder Traversal
+        Level-order Traversal
