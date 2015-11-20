@@ -5,7 +5,7 @@
  */
 package carrano;
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Stack;
 
@@ -52,7 +52,7 @@ public class ArrayBinarySearcher<E extends Comparable> {
             else
                 end = mid - 1;
         }
-        return linearSearch(start, end);
+        return linearSearch(start, end); //runs linear search once binary search has reduced size of solution set to <=4 elements
     }
     
     private int linearSearch(int start, int end) {
